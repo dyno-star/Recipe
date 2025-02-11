@@ -1,4 +1,12 @@
+from dotenv import load_dotenv
+import os
 import random
 from openai import OpenAI
-api_key = "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"
-client = OpenAI(api_key= api_key)
+
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=api_key)
+
+ingredients = ["banana", "eggs", "cheese", "honey", "bread", "tomato", "milk", "apple", "sausages"]
+chosen_ingredients = random.sample(ingredients, 3)
+print(f"Today's random ingredients are {', '.join(chosen_ingredients)}")
