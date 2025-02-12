@@ -12,8 +12,12 @@ if not api_key:
 
 client = OpenAI()
 
-ingredients = ["banana", "eggs", "cheese", "honey", "bread", "tomato", "milk", "apple", "sausages"]
-chosen_ingredients = random.sample(ingredients, 3)
+def get_ingredients():
+    ingredients_input = input("Enter a list of ingredients separated by commas: ")
+    ingredients = [ingredient.strip() for ingredient in ingredients_input.split(',')]
+    return ingredients
+
+chosen_ingredients = random.sample(get_ingredients(), 3)
 print(f"Today's random ingredients are {', '.join(chosen_ingredients)}")
 
 def countdown(seconds):
