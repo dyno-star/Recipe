@@ -5,7 +5,7 @@ import time
 from openai import OpenAI
 
 
-#Recipe
+#Recipe Generator
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
