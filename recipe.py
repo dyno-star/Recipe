@@ -49,7 +49,7 @@ def promptGPT(prompt, model, system_requirements, retries=3, wait_time=30):
                 return "Failed to generate a recipe due to API limitations."
 
 model = "gpt-3.5-turbo"
-system_requirements = "You are a helpful AI designed to create recipes three."
+system_requirements = "You are a helpful AI designed to create recipes three randomly selected."
 prompt = f"Create a simple and delicious recipe using the following ingredients: {', '.join(chosen_ingredients)}."
 
 recipe = promptGPT(prompt, model, system_requirements)
